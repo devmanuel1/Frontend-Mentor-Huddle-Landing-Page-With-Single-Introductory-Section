@@ -1,0 +1,15 @@
+{
+  "name": "frontend-mentor-huddle-landing-page-with-single-introductory-section",
+  "version": "1.0.0",
+  "description": "Frontend Mentor Huddle Landing Page With Single Introductory Section Challenge",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "sass app/scss/style.scss dist/style.css",
+    "watch-css": "sass --watch app/scss/style.scss dist/style.css"
+  },
+  "author": "Emmanuel Onwuachumba",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.77.8"
+  }
+}

@@ -1,0 +1,150 @@
+@use "../utils/functions";
+@use "../globals/colors";
+
+body {
+  height: 100vh;
+  background: url(../../../images/bg-mobile.svg) no-repeat center top, colors.$violet;
+  background-size: contain;
+  @include functions.flexColumn;
+  justify-content: space-evenly;
+
+  @media (min-width: 900px) {
+    background: url(../../../images/bg-desktop.svg) no-repeat center top, colors.$violet;
+    background-size: contain;
+  }
+
+  .container {
+    padding: 40px;
+
+    @media (min-width: 900px) {
+      padding: 20px 40px 0;
+    }
+
+    .logo-container {
+      @include functions.marginBottom;
+
+      @media (min-width: 900px) {
+        @include functions.marginBottom2;
+      }
+      .logo {
+        width: 150px;
+      }
+    }
+    .cta-container {
+      @media (min-width: 900px) {
+        @include functions.flexRowCenter;
+        justify-content: flex-start;
+      }
+
+      .cta-img-container {
+        @include functions.marginBottom;
+
+        @media (min-width: 900px) {
+          flex-basis: 50%;
+          margin-right: 40px;
+          @include functions.marginBottom2;
+        }
+
+        img {
+          width: 100%;
+          // @media (min-width: 900px) {
+          //   flex-basis: 60%;
+          // }
+        }
+      }
+
+      .cta-text-container {
+        @include functions.flexColumnCenter;
+        margin-bottom: 60px;
+
+        @media (min-width: 900px) {
+          @include functions.flexColumn;
+          flex-basis: 40%;
+          align-items: flex-start;
+          margin-bottom: 20px;
+        }
+        h2 {
+          @include functions.marginBottom;
+          @media (min-width: 900px) {
+            @include functions.marginBottom2;
+            text-align: left;
+            max-width: 300px;
+          }
+        }
+
+        p {
+          text-align: center;
+          @include functions.marginBottom;
+          @media (min-width: 900px) {
+            @include functions.marginBottom2;
+            text-align: left;
+          }
+        }
+
+        .cta-btn {
+          width: 70%;
+          font-family: "Poppins", sans-serif;
+          font-size: 0.75rem;
+          background: colors.$white;
+          color: colors.$violet;
+          border: none;
+          padding: 10px 60px;
+          border-radius: 50px;
+          cursor: pointer;
+
+          @media (min-width: 900px) {
+            width: 30%;
+          }
+
+          &:hover {
+            background: colors.$soft-magenta;
+            color: colors.$white;
+          }
+        }
+      }
+    }
+  }
+
+  .socials {
+    padding: 40px;
+    @include functions.flexRowCenter;
+    gap: 16px;
+
+    @media (min-width: 900px) {
+      padding: 0;
+      padding-right: 40px;
+      margin-top: 15px;
+      justify-content: flex-end;
+    }
+
+    a {
+      color: colors.$white;
+      width: 30px;
+      height: 30px;
+      @include functions.flexColumnCenter;
+      border: 1px solid colors.$white;
+      border-radius: 50%;
+
+      &:hover {
+        color: colors.$soft-magenta;
+        border: 1px solid colors.$soft-magenta;
+      }
+    }
+  }
+
+  footer {
+    padding: 40px;
+
+    @media (min-width: 900px) {
+      padding: 0;
+      margin-top: 15px;
+    }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+    .attribution a {
+      color: colors.$soft-magenta;
+    }
+  }
+}
